@@ -9,13 +9,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
 
-          <Image
-            className="dark:invert h-[14px] w-4"
-            src="/vercel.svg"
-            alt="Vercel logomark"
-            width={16}
-            height={14}
-          />
+
           Deploy Now
 
           <a
