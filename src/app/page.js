@@ -7,15 +7,7 @@ export default function Home() {
 
 
 
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
 
-
-          Deploy Now
-
-
-          Documentation
-
-        </div>
       </main >
     </div >
   );
