@@ -1,4 +1,3 @@
-
 import { Separator } from "@heroui/react";
 import {
   FiArrowUpRight,
@@ -8,140 +7,82 @@ import {
   FiUsers,
 } from "react-icons/fi";
 
+const searchFields = [
+  { icon: FiMapPin, title: "Location", hint: "Where do you want to go?" },
+  { icon: FiCalendar, title: "Date & Duration", hint: "Choose your travel dates" },
+  { icon: FiDollarSign, title: "Your Budget", hint: "Select your price range" },
+  { icon: FiUsers, title: "Travelers", hint: "Number of guests" },
+];
+
 const Banner = () => {
   return (
-    <section className="relative min-h-[650px] overflow-hidden bg-[url('/assets/banner.png')] bg-cover bg-center text-white">
+    <section className="relative bg-black text-white">
+      {/* Hero (image only lives here) */}
+      <div className="relative bg-[url('/assets/banner.png')] bg-cover bg-center lg:min-h-[720px]">
+        {/* Overlay: fades into black at the bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black" />
 
-      {/* Background Overlay */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#001339]/40 via-black/30 to-[#001339]/80" /> */}
-
-      <div className="relative z-10 flex min-h-[650px] flex-col justify-between">
-
-        {/* Hero Content */}
-        <div className="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
-
-          <span className="mb-6 font-body rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-medium uppercase tracking-[0.3em] backdrop-blur-md">
+        <div className="relative z-10 flex flex-col items-center justify-center px-5 py-14 text-center sm:py-20 lg:min-h-[720px] lg:pb-48">
+          <span className="mb-4  rounded-full border border-white/30 bg-white/10 px-4 py-1.5 font-body text-[10px] font-medium uppercase tracking-[0.2em] backdrop-blur-md sm:mb-6 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.3em]">
             Discover the Extraordinary
           </span>
 
-          <h1 className="max-w-5xl font-heading text-5xl font-semibold leading-[1.12] tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="max-w-5xl font-heading text-4xl font-semibold leading-[1.15] tracking-tight drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             Discover Your
             <br />
             Next{" "}
-            <span className="font-serif italic text-cyan-300">
-              Adventure
-            </span>
+            <span className="font-serif italic text-cyan-300">Adventure</span>
           </h1>
 
-          <p className="mt-7 font-body max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-            Explore breathtaking destinations and create unforgettable
-            memories with our curated luxury travel experiences.
+          <p className="mt-5  max-w-xs font-body text-sm leading-7 text-white/90 sm:mt-7 sm:max-w-xl sm:text-base md:max-w-2xl md:text-lg md:leading-8">
+            Explore breathtaking destinations and create unforgettable memories
+            with our curated luxury travel experiences.
           </p>
 
-          {/* Action Buttons */}
-          <div className="mt-9 font-ui flex flex-wrap justify-center gap-4">
-
-            <button className="group cursor-pointer flex items-center gap-3 bg-cyan-500 px-7 py-4 text-sm font-semibold uppercase tracking-wider transition duration-300 hover:bg-cyan-400">
+          <div className="mt-7 flex w-full max-w-xs flex-col items-center gap-3 font-ui sm:mt-9 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
+            <button className="group flex w-full cursor-pointer items-center justify-center gap-2 bg-[#00B8DB] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-black transition duration-300 hover:bg-cyan-300 sm:w-auto sm:gap-3 sm:px-7 sm:py-4 sm:text-sm">
               Explore Now
-              <FiArrowUpRight
-                size={18}
-                className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
+              <FiArrowUpRight className="h-4 w-4 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:h-4.5 sm:w-4.5" />
             </button>
 
-            <button className="border cursor-pointer border-white/60 bg-white/10 px-7 py-4 text-sm font-semibold uppercase tracking-wider backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#001339]">
+            <button className="w-full cursor-pointer border border-white/60 bg-white/10 px-6 py-3 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm transition duration-300 hover:bg-white hover:text-black sm:w-auto sm:px-7 sm:py-4 sm:text-sm">
               View Destinations
             </button>
-
           </div>
         </div>
+      </div>
 
-        {/* Luxury Search Bar */}
-        <div className="w-full font-ui px-5 pb-8 md:px-10 lg:px-16">
-
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 rounded-2xl border border-white/20 bg-white/15 p-5 shadow-2xl backdrop-blur-xl md:flex-row md:gap-0 md:p-6">
-
-            {/* Location */}
-            <div className="flex w-full flex-1 items-center gap-4 md:px-5">
-              <FiMapPin
-                size={23}
-                className="shrink-0 text-cyan-300"
-              />
-              <div>
-                <h3 className="text-sm font-semibold">Location</h3>
-                <p className="mt-1 text-xs text-white/65">
-                  Where do you want to go?
-                </p>
+      {/* Search bar: below image on mobile, floating on lg */}
+      <div className="relative z-20 px-4 py-5 font-ui sm:px-6 lg:absolute lg:inset-x-0 lg:bottom-0 lg:px-8 lg:py-0 lg:pb-8 xl:px-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-3 gap-y-4 rounded-2xl border border-white/20 bg-white/10 p-4 text-white shadow-2xl shadow-black/40 backdrop-blur-xl sm:gap-x-5 sm:p-5 lg:flex lg:items-center lg:gap-0 lg:p-4 xl:p-6">
+          {searchFields.map(({ icon: Icon, title, hint }, i) => (
+            <div
+              key={title}
+              className="contents lg:flex lg:min-w-0 lg:flex-1 lg:items-center"
+            >
+              <div className="flex w-full min-w-0 flex-1 items-center gap-2.5 sm:gap-4 lg:gap-3 lg:px-3 xl:gap-4 xl:px-5">
+                <Icon className="h-5 w-5 shrink-0 text-[#00B8DB] sm:h-6 sm:w-6" />
+                <div className="min-w-0">
+                  <h3 className="truncate text-xs font-semibold sm:text-sm">{title}</h3>
+                  <p className="mt-0.5 hidden truncate text-xs text-white/70 sm:block">
+                    {hint}
+                  </p>
+                </div>
               </div>
+
+              {i < searchFields.length - 1 && (
+                <Separator
+                  orientation="vertical"
+                  className="hidden h-10 shrink-0 bg-white/25 lg:block"
+                />
+              )}
             </div>
+          ))}
 
-            <Separator
-              orientation="vertical"
-              className="hidden h-10 bg-white/30 md:block"
-            />
-
-            {/* Date */}
-            <div className="flex w-full flex-1 items-center gap-4 md:px-5">
-              <FiCalendar
-                size={23}
-                className="shrink-0 text-cyan-300"
-              />
-              <div>
-                <h3 className="text-sm font-semibold">Date & Duration</h3>
-                <p className="mt-1 text-xs text-white/65">
-                  Choose your travel dates
-                </p>
-              </div>
-            </div>
-
-            <Separator
-              orientation="vertical"
-              className="hidden h-10 bg-white/30 md:block"
-            />
-
-            {/* Budget */}
-            <div className="flex w-full flex-1 items-center gap-4 md:px-5">
-              <FiDollarSign
-                size={23}
-                className="shrink-0 text-cyan-300"
-              />
-              <div>
-                <h3 className="text-sm font-semibold">Your Budget</h3>
-                <p className="mt-1 text-xs text-white/65">
-                  Select your price range
-                </p>
-              </div>
-            </div>
-
-            <Separator
-              orientation="vertical"
-              className="hidden h-10 bg-white/30 md:block"
-            />
-
-            {/* Travelers */}
-            <div className="flex w-full flex-1 items-center gap-4 md:px-5">
-              <FiUsers
-                size={23}
-                className="shrink-0 text-cyan-300"
-              />
-              <div>
-                <h3 className="text-sm font-semibold">Travelers</h3>
-                <p className="mt-1 text-xs text-white/65">
-                  Number of guests
-                </p>
-              </div>
-            </div>
-
-            {/* Search Button */}
-            <button className="group cursor-pointer flex w-full items-center justify-center gap-3 rounded-xl bg-cyan-500 px-7 py-4 text-sm font-semibold uppercase tracking-wider transition duration-300 hover:bg-cyan-400 md:w-auto">
-              Search
-              <FiArrowUpRight
-                size={18}
-                className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </button>
-
-          </div>
+          <button className="group col-span-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#00B8DB] px-6 py-3 text-xs font-semibold uppercase tracking-wider text-black transition duration-300 hover:bg-cyan-300 sm:py-4 sm:text-sm lg:col-span-1 lg:ml-2 lg:w-auto lg:shrink-0 lg:gap-3 lg:px-6 xl:px-7">
+            Search
+            <FiArrowUpRight className="h-4 w-4 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 sm:h-4.5 sm:w-4.5" />
+          </button>
         </div>
       </div>
     </section>
