@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+@theme inline {
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+  --font-ui: var(--font-poppins);
+}
