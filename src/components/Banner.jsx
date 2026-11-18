@@ -23,7 +23,7 @@ const Banner = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black" />
 
         <div className="relative z-10 flex flex-col items-center justify-center px-5 py-14 text-center sm:py-20 lg:min-h-[720px] lg:pb-48">
-          <span className="mb-4  rounded-full border border-white/30 bg-white/10 px-4 py-1.5 font-body text-[10px] font-medium uppercase tracking-[0.2em] backdrop-blur-md sm:mb-6 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.3em]">
+          <span className="mb-4  rounded-full border border-cyan-300/50 bg-white/10 px-4 py-1.5 font-body text-[10px] font-medium uppercase tracking-[0.2em] backdrop-blur-md sm:mb-6 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.3em]">
             Discover the Extraordinary
           </span>
 
