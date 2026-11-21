@@ -19,7 +19,7 @@ const Banner = () => {
     <section className="relative bg-black text-white">
       {/* Hero (image only lives here) */}
       <div className="relative bg-[url('/assets/banner.png')] bg-cover bg-center lg:min-h-[720px]">
-        {/* Overlay: fades into black at the bottom */}
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/10 to-black" />
 
         <div className="relative z-10 flex flex-col items-center justify-center px-5 py-14 text-center sm:py-20 lg:min-h-[720px] lg:pb-48">
