@@ -10,6 +10,7 @@ const mainLinks = [
   { href: "/", label: "Home" },
   { href: "/destinations", label: "Destinations" },
   { href: "/my-booking", label: "My Booking" },
+  { href: "/add-destination", label: "Add Destination" },
 ];
 
 const Navbar = () => {
@@ -17,10 +18,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const linkClass = (href) =>
-    `rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-      pathname === href
-        ? "bg-black text-white dark:bg-white dark:text-black"
-        : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
+    `rounded-full px-4 py-2 text-sm font-medium transition-colors ${pathname === href
+      ? "bg-black text-white dark:bg-white dark:text-black"
+      : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/10"
     }`;
 
   return (
