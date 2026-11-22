@@ -9,10 +9,10 @@ export default function PageLoader() {
       <div className="relative flex h-16 w-16 items-center justify-center">
         <div className="absolute inset-0 rounded-full border border-[#001339]/10" />
 
-        <div className="absolute inset-0 animate-spin rounded-full border-2 border-transparent border-t-[#D9B56D]" />
+        <div className="absolute inset-0 animate-spin rounded-full border-2 border-transparent border-t-[#001339]" />
 
         <svg
-          className="h-7 w-7 text-[#001339] animate-[fly_2s_ease-in-out_infinite]"
+          className="h-7 w-7 text-amber-500 animate-[fly_2s_ease-in-out_infinite]"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
